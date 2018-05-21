@@ -55,7 +55,8 @@ public class ItemPickup : Interactable {
 
 	//When the player enters another GameObject collider. The other object must have a collider
 	//The player GameObject collider must be set to trigger the same for the other GameObject
-	void OnTriggerEnter(Collider col)
+	//All moved to PlayerMovementController script now
+	/*void OnTriggerEnter(Collider col)
 	{
 		if (col.tag == "Player") 
 		{
@@ -63,6 +64,6 @@ public class ItemPickup : Interactable {
 			interactName.text =  item.name;
 			interactMessage.text = item.description;
 		}
-	}
+	}*/
 
 }
