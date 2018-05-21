@@ -20,6 +20,16 @@ public class PlayerMovementController : MonoBehaviour
 	public GameObject interactPanelUI;
 
 	public GameObject inventoryUI;
+	
+	//set up a reference to the name text box from the interactPanelUI
+	//This needs to be assigned in the inspector
+	//Only needs to be assigned once if set up here
+	public Text interactName; 
+
+	//set up a reference to the interaction message from the interactPanelUI
+	//This needs to be assigned in the inspector
+	//Only needs to be assigned once if set up here
+	public Text interactMessage;
 
 	//sets the goal for the NavMeshAgent
 	private Vector3 goal;
@@ -62,6 +72,14 @@ public class PlayerMovementController : MonoBehaviour
 			//Stores the interactable that has been entered as a new Interactable instance
 			Interactable interactable = col.GetComponent<Interactable> ();
 			//Debug.Log ("This object is: " + col.gameObject.name);
+			
+			//Want to get the scriptable object data from the collider enetered
+			Item item = col.GetComponent<Item> ();
+			Debug.Log ("This object is: " + col.gameObject.name);
+			
+			//Sets these two values from the Scriptable Object attached to the Item that the player has entered the collider of
+			interactName.text =  item.name;
+			interactMessage.text = item.description;
 
 			//used to set the transfrom Vector3 of the target collider
 			//target = col.transform.position;
