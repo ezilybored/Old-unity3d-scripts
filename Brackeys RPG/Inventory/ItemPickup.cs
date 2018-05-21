@@ -14,11 +14,13 @@ public class ItemPickup : Interactable {
 
 	//This references the Interact panel UI so that it can be closed when the item is picked up
 	//This needs to be dragged and dropped onto the item in the inspector
-	public GameObject interactPanelUI;
+	//Now assigned in PlayerMovementController
+	//public GameObject interactPanelUI;
 
 	//set up a reference to the name text box from the interactPanelUI
 	//This needs to be assigned in the inspector
-	public Text interactName; 
+	//Now assigned in PlayerMovementController
+	//public Text interactName; 
 
 	//set up a reference to the interaction message from the interactPanelUI
 	//This needs to be assigned in the inspector
